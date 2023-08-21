@@ -21,6 +21,7 @@ const ContactForm: FC = memo(() => {
 
   const [data, setData] = useState<FormData>(defaultData);
   const [verify, setVerify] = useState(false)
+  const [sending, setSending] = useState(false)
 
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
@@ -40,15 +41,15 @@ const ContactForm: FC = memo(() => {
       console.log("Debe verificar");
       return
     }
-
+    setSending(true)
     emailjs.sendForm(
       'service_kyrejdj',
       'template_67vbwe7',
       e.target,
       'CQvA3pmQVvEBZXWEO'
     )
-    .then((result) => {
-      console.log(result.text);
+    .then(() => {
+      setSending(false)
     }, (error) => {
       console.log(error.text);
     });
@@ -81,9 +82,10 @@ const ContactForm: FC = memo(() => {
       <button
         aria-label="Enviar formulario"
         className="w-max rounded-full border-2 border-orange-600 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
+        disabled={sending}
         type="submit"
       >
-        Enviar
+        {sending ? "Enviando..." : "Enviar"}
       </button>
       <HCaptcha
       sitekey="7b9702c7-cf86-4cbb-af66-a16c0fd3ce24"
