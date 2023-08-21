@@ -25,6 +25,22 @@ import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import porfolioImage12 from '../images/portfolio/portfolio-12.jpg';
+import porfolioImage13 from '../images/portfolio/portfolio-13.jpg';
+import porfolioImage14 from '../images/portfolio/portfolio-14.jpg';
+import porfolioImage15 from '../images/portfolio/portfolio-15.jpg';
+import porfolioImage16 from '../images/portfolio/portfolio-16.jpg';
+import porfolioImage17 from '../images/portfolio/portfolio-17.jpg';
+import porfolioImage18 from '../images/portfolio/portfolio-18.jpg';
+import porfolioImage19 from '../images/portfolio/portfolio-19.jpg';
+import porfolioImage20 from '../images/portfolio/portfolio-20.jpg';
+import porfolioImage21 from '../images/portfolio/portfolio-21.jpg';
+import porfolioImage22 from '../images/portfolio/portfolio-22.jpg';
+import porfolioImage23 from '../images/portfolio/portfolio-23.jpg';
+import porfolioImage24 from '../images/portfolio/portfolio-24.jpg';
+import porfolioImage25 from '../images/portfolio/portfolio-25.jpg';
+import porfolioImage26 from '../images/portfolio/portfolio-26.jpg';
+import porfolioImage27 from '../images/portfolio/portfolio-27.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -100,9 +116,9 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Hoy en día, la mayoría de las empresas del sector turístico no tienen llegada o encuentran dificultad para comenzar a publicar en medios masivos de comunicación, un importante canal promociona para difundir sus productos o servicios.
-  Nuestro equipo de trabajo especializado les ofrece un servicio personalizado de asesoría publicitaria y las herramientas para tener presencia en los principales medios de comunicación. `,
-  aboutItems: [
+  description: "Hoy en día, la mayoría de las empresas del sector turístico no tienen llegada o encuentran dificultad para comenzar a publicar en medios masivos de comunicación, un importante canal promociona para difundir sus productos o servicios.\n" +
+  "Nuestro equipo de trabajo especializado les ofrece un servicio personalizado de asesoría publicitaria y las herramientas para tener presencia en los principales medios de comunicación.",
+    aboutItems: [
     {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
     {label: 'Age', text: '29', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
@@ -191,70 +207,166 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'Wyndham',
+    description: '',
+    url: 'https://hotelwyndhamnordelta.com/',
     image: porfolioImage1,
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'Palladium',
+    description: '',
+    url: 'https://www.palladiumhotelgroup.com/es',
     image: porfolioImage2,
   },
   {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'BusPlus',
+    description: '',
+    url: 'https://busplus.com.ar/',
     image: porfolioImage3,
   },
   {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'Opus Viajes',
+    description: '',
+    url: 'https://www.opusviajes.tur.ar/',
     image: porfolioImage4,
   },
   {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
+    title: 'Go~Up',
+    description: '',
     url: '',
     image: porfolioImage5,
   },
   {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'Latitud Buzios',
+    description: '',
+    url: 'https://www.latitudhoteles.com/es/hoteles/latitud-buzios/',
     image: porfolioImage6,
   },
   {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
+    title: 'Catedral Patagonia',
+    description: '',
     url: '',
     image: porfolioImage7,
   },
   {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'Via Bariloche',
+    description: '',
+    url: 'https://viabariloche.com.ar/',
     image: porfolioImage8,
   },
   {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
+    title: 'Las Leñas',
+    description: '',
     url: '',
     image: porfolioImage9,
   },
   {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'Drazzler',
+    description: '',
+    url: 'https://www.wyndhamhotels.com/es-xl/dazzler',
     image: porfolioImage10,
   },
   {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: '',
+    title: 'Rochester',
+    description: '',
+    url: 'https://www.rochester-hotel.com/',
     image: porfolioImage11,
+  },
+  {
+    title: 'Ker',
+    description: '',
+    url: 'https://www.kerhoteles.com.ar/',
+    image: porfolioImage12,
+  },
+  {
+    title: 'Sturla',
+    description: '',
+    url: 'https://www.sturlaviajes.com.ar/',
+    image: porfolioImage13,
+  },
+  {
+    title: 'Dot',
+    description: '',
+    url: 'https://dot-hotels.com/portal/es-es/p19/DOTHotels',
+    image: porfolioImage14,
+  },
+  {
+    title: 'Shopping Viajes',
+    description: '',
+    url: 'https://www.shoppingviajes.com/',
+    image: porfolioImage15,
+  },
+  {
+    title: 'Senderos del Tao',
+    description: '',
+    url: 'http://senderosdeltao.com.ar/',
+    image: porfolioImage16,
+  },
+  {
+    title: 'New Point Miami',
+    description: '',
+    url: 'https://newpointmiami.com/en/',
+    image: porfolioImage17,
+  },
+  {
+    title: 'Gool',
+    description: '',
+    url: 'https://www.voegol.com.br/',
+    image: porfolioImage18,
+  },
+  {
+    title: 'Universal Assistance',
+    description: '',
+    url: 'https://www.universal-assistance.com/ar-es/home.html',
+    image: porfolioImage19,
+  },
+  {
+    title: 'Pedraza',
+    description: '',
+    url: 'https://pedraza.com.ar/',
+    image: porfolioImage20,
+  },
+  {
+    title: 'Travel Ace',
+    description: '',
+    url: 'https://www.travel-ace.com/ar-es/home.html',
+    image: porfolioImage21,
+  },
+  {
+    title: 'Universal Orlando',
+    description: '',
+    url: 'https://www.universalorlando.com/web/en/us',
+    image: porfolioImage22,
+  },
+  {
+    title: 'Disney',
+    description: '',
+    url: 'https://disneyworld.disney.go.com/es-ar/',
+    image: porfolioImage23,
+  },
+  {
+    title: 'All Seasons',
+    description: '',
+    url: 'https://www.allseasons.com.ar/',
+    image: porfolioImage24,
+  },
+  {
+    title: 'Gyra',
+    description: '',
+    url: 'https://www.gyra.com/',
+    image: porfolioImage25,
+  },
+  {
+    title: 'Visit Florida',
+    description: '',
+    url: 'https://www.visitflorida.org/',
+    image: porfolioImage26,
+  },
+  {
+    title: 'Resort La Torrel',
+    description: '',
+    url: 'https://www.resortlatorre.com.br/',
+    image: porfolioImage27,
   },
 ];
 
@@ -335,8 +447,8 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'tu@mail.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'info@asesoreslm.com.ar',
+      href: 'mailto:info@asesoreslm.com.ar',
     },
     {
       type: ContactType.Location,

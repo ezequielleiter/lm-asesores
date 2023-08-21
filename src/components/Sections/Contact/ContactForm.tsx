@@ -1,4 +1,6 @@
-import {FC, memo, useCallback, useMemo, useState} from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+import emailjs from 'emailjs-com';
+import {FC, FormEvent, memo, useCallback, useMemo, useState} from 'react';
 
 interface FormData {
   name: string;
@@ -16,7 +18,9 @@ const ContactForm: FC = memo(() => {
     [],
   );
 
+
   const [data, setData] = useState<FormData>(defaultData);
+  const [verify, setVerify] = useState(false)
 
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
@@ -29,23 +33,33 @@ const ContactForm: FC = memo(() => {
     [data],
   );
 
-  const handleSendMessage = useCallback(
-    async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      /**
-       * This is a good starting point to wire up your form submission logic
-       * */
-      console.log('Data to send: ', data);
-    },
-    [data],
-  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSendMessage = (e: FormEvent<HTMLFormElement> | any) => {
+    e.preventDefault();
+    if (!verify) {
+      console.log("Debe verificar");
+      return
+    }
+
+    emailjs.sendForm(
+      'service_kyrejdj',
+      'template_67vbwe7',
+      e.target,
+      'CQvA3pmQVvEBZXWEO'
+    )
+    .then((result) => {
+      console.log(result.text);
+    }, (error) => {
+      console.log(error.text);
+    });
+  }
 
   const inputClasses =
     'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
 
   return (
-    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage}>
-      <input className={inputClasses} name="name" onChange={onChange} placeholder="Name" required type="text" />
+    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={(e) => handleSendMessage(e)}>
+      <input className={inputClasses} name="name" onChange={onChange} placeholder="Nombre" required type="text" />
       <input
         autoComplete="email"
         className={inputClasses}
@@ -60,16 +74,22 @@ const ContactForm: FC = memo(() => {
         maxLength={250}
         name="message"
         onChange={onChange}
-        placeholder="Message"
+        placeholder="Mensaje"
         required
         rows={6}
       />
       <button
-        aria-label="Submit contact form"
+        aria-label="Enviar formulario"
         className="w-max rounded-full border-2 border-orange-600 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
-        type="submit">
+        type="submit"
+      >
         Enviar
       </button>
+      <HCaptcha
+      sitekey="7b9702c7-cf86-4cbb-af66-a16c0fd3ce24"
+      // eslint-disable-next-line react/jsx-sort-props, react-memo/require-usememo
+      onVerify={() => setVerify(true)}
+    />
     </form>
   );
 });
